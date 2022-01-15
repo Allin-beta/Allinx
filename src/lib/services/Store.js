@@ -1,4 +1,4 @@
-import { importSVG, importJSON } from "./Inject";
+import { importSVG, importJSON, addShape } from "./Inject";
 import { save } from "./Export";
 import { resetCanvas } from "./Canvas";
 import { addGrid, removeGrid } from "./Guides";
@@ -7,7 +7,7 @@ let pages = [];
 let properties = {
   width: 500,
   height: 500,
-  background: "#0000FF3C",
+  background: "#FFFFFF",
   format: "SVG",
 };
 let stage = { width: 1440, height: 790 };
@@ -26,6 +26,9 @@ var store = {
   import: (content, type, params) => {
     if (type === "svg") importSVG(content, params);
     else if (type === "json") importJSON(content, params);
+  },
+  add: (type) => {
+    addShape(type);
   },
   save: (format) => save(format),
   resetWorkspace: () =>

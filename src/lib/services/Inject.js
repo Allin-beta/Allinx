@@ -1,16 +1,42 @@
 import { canvas, properties, resetCanvas } from "./Canvas";
 import { fabric } from "fabric";
 
-function addRectangle(color) {
+function addRectangle() {
   canvas.discardActiveObject().renderAll();
   var rect = new fabric.Rect({
-    fill: color,
+    fill: "",
+    stroke: "black",
+    strokeWidth: 2,
     left: properties.left,
     top: properties.top,
     width: 200,
     height: 200,
   });
   canvas.add(rect).renderAll();
+}
+
+function addCircle(color) {
+  canvas.discardActiveObject().renderAll();
+  var circle = new fabric.Rect({
+    fill: "",
+    stroke: "black",
+    strokeWidth: 2,
+    left: properties.left,
+    top: properties.top,
+    radius: 100,
+  });
+  canvas.add(circle).renderAll();
+}
+
+function addShape(type) {
+  switch (type) {
+    case "square":
+      addRectangle();
+      break;
+    case "circle":
+      addCircle();
+      break;
+  }
 }
 
 function importSVG(svg, params) {
@@ -67,4 +93,4 @@ function insertElements(objects) {
   canvas.renderAll();
 }
 
-export { addRectangle, importSVG, importJSON };
+export { addShape, importSVG, importJSON };
