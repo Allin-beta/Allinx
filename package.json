@@ -1,0 +1,55 @@
+{
+  "name": "@allinorg/allinx",
+  "version": "0.2.4",
+  "private": false,
+  "description": "Canvas library",
+  "bugs": {
+    "url": "https://github.com/Allin-beta/Allinx/issues"
+  },
+  "homepage": "https://github.com/Allin-beta/Allinx#readme",
+  "author": "Omar Mokhfi",
+  "license": "ISC",
+  "keywords": [
+    "react",
+    "editor",
+    "canvas",
+    "svg",
+    "fabricjs",
+    "library"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Allin-beta/Allinx.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "publish": "npm publish --access public"
+  },
+  "dependencies": {
+    "fabric": "^4.6.0",
+    "file-saver": "^2.0.5",
+    "jquery": "^3.6.0",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "path": "^0.12.7",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
